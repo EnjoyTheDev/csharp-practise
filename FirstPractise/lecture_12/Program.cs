@@ -6,7 +6,9 @@ namespace lecture_12
   {
     static void Main(string[] args)
     {
+
       CreatArray();
+      EqualRectangles();
       Console.ReadLine();
     }
     struct Reactangle
@@ -14,7 +16,7 @@ namespace lecture_12
       public int width;
       public int heigth;
     }
-    static void CreatArray()
+    static object CreatArray()
     {
       Random rand = new Random();
       int min = 1;
@@ -26,6 +28,11 @@ namespace lecture_12
         arrayRectangle[i].width = rand.Next(min, max);
         Console.Write($"\n Heigth: {arrayRectangle[i].heigth}, Width : {arrayRectangle[i].width}");
       }
+      return arrayRectangle;
+    }
+    static void EqualRectangles()
+    {
+      Reactangle[] arrayRectangle = new Reactangle[100];
       var equalNumbers = 0;
       for (int i = 1; i < arrayRectangle.Length; i++)
       {
@@ -34,9 +41,10 @@ namespace lecture_12
           equalNumbers++;
         }
       }
-      Console.WriteLine($"\n\t Equals: {equalNumbers}");
+      Console.WriteLine($"\n\t Equals: {arrayRectangle}");
     }
   }
 }
+
 
 
